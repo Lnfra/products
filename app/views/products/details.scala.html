@@ -1,0 +1,22 @@
+
+@(product: Product)(implicit flash: Flash, lang: Lang)
+
+@*Create current view witin the main view*@
+@*Pass the parameters required for the current view*@
+@main(Messages("products.details", product.name)) {
+<h2>
+	@tags.barcode(product.ean)
+	@Messages("products.details", product.name)
+</h2>
+
+<dl class ="dl-horizontal">
+	<dt>@Messages("ean"):</dt>
+	<dd>@product.ean</dd>
+
+	<dt>@Messages("name"):</dt>
+	<dd>@product.name</dd>
+
+	<dt>@Messages("description"):</dt>
+	<dd>@product.description</dd>
+</dl>
+}
